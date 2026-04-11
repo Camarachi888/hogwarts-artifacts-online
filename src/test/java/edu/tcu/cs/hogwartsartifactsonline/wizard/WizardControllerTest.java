@@ -239,6 +239,18 @@ public class WizardControllerTest {
                 .andExpect(jsonPath("$.data").isEmpty());
     }
 
+    @Test
+    void  testAssignArtifactSuccess() throws Exception {
+        //given
+        doNothing().when(this.wizardService).assignArtifact(2, "1250808601744904191");
+        //when and then
+        this.mockMvc.perform(put(this.baseUrl + "/wizards/2/artifacts/1250808601744904191").accept(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.flag").value(true))
+                .andExpect(jsonPath("$.code").value(StatusCode.SUCCESS))
+                .andExpect(jsonPath("$.message").value("Artifact assignment success"))
+                .andExpect(jsonPath("$.data").isEmpty());
+    }
+
 
 }
 
