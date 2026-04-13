@@ -12,7 +12,6 @@ import java.io.Serializable;
 public class HogwartsUser implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @NotEmpty(message = "username is required.")
