@@ -262,6 +262,6 @@ class WizardServiceTest {
         //then
         assertThat(thrown)
                 .isInstanceOf(ObjectNotFoundException.class)
-                .hasMessage("Could nor find arifact with Id 1250808601744904192 ");
+                .hasMessage("Could not find artifact with Id 1250808601744904192");
     }
 }
